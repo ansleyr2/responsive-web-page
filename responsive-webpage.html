@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+           
+    <title>Ultra Corporation</title>
+    <style>
+        body {
+            margin: 40px;
+            xfont-size: 1.5rem;
+            background: #fff linear-gradient(to bottom, #e9ecef, #fff 200px);
+        }
+
+        h1,h2,h3{
+            margin: 0;
+        }
+
+        .visuals {
+            grid-area: visuals;
+        }
+
+        .key-features {
+            grid-area: key-features;
+        }
+
+        .description {
+            grid-area: description;
+        }
+
+        .menu {
+           grid-area: menu;
+        }
+
+        .breaCrumb{
+            grid-area: breadCrumb;
+        }
+
+        .menu a{
+            float: left;
+            padding: 0 10px 0 10px;
+            color: #fff;
+            text-decoration: none;
+            border-right: 1px solid #fff;
+            cursor: pointer;
+            xtransition: all 0.5s ease-in-out;
+            padding: 0 1rem;
+            transition: opacity 0.2s;
+        }
+
+        /* .menu a:last-child{
+            border-right: none;
+        } */
+
+        .menu a:hover{
+            xtext-decoration: underline;
+            
+        }
+
+        /* .menu a{
+            padding: 0 1rem;
+            transition: opacity 0.2s;
+        } */
+        .menu:hover a:not(:hover) {
+            opacity: 0.5;
+        }
+
+        .menu a:first-child{
+            border-right: none;
+        }
+
+        .footer {
+            grid-area: footer;
+            text-align: center;
+        }
+
+        .container {
+            xbackground-color: #fff;
+            color: #444;
+        }
+
+        .container {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: 300px auto 200px;
+            grid-template-areas:
+            "menu  menu  menu"
+            "breadCrumb breadCrumb breadCrumb"
+            "visuals description key-features"
+            "footer  footer  footer";
+        }
+
+        .btn{
+            width: 150px;
+            height: 50px;
+            transition: font-size 0.2s ease-in;
+        }
+
+        .btn:hover{
+            color: blue;
+            font-weight: bold;
+            font-size: large;
+        }
+
+        .menu .hamburger{
+            display: none;
+            height: 10px;
+        }
+
+        .image-front, .image-back{
+            width: 100%;
+            max-width: 90%;
+        }
+
+        .title{
+            
+            /* text-shadow: 0 2px white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #b8bec5; */
+
+        }
+
+        .highlihgts-list li{
+            padding: 0 0 10px 0;
+        }
+
+        .image-front-mobile, .image-back-mobile{
+            display: none;
+        }
+
+        .float-right{
+            xfloat: right;
+            font-size: 70%;
+            padding: 0 0 0 10px;
+            font-weight: bold;
+        }
+
+        .mobile-header{
+            display: none;
+        }
+
+        .company-name{
+                padding: 0 0 0 10px;
+                font-weight: bolder;
+            }
+
+        /* On screens that are 500px wide or less */
+        @media screen and (max-width: 500px) {
+            body{
+                xbackground-color: aqua;
+                margin: 0;
+            }
+            .container{
+                display: grid;
+                grid-gap: 1em;
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "menu"
+                "breadCrumb"
+                "visuals"
+                "description"
+                "key-features"
+                "footer";
+            }
+
+            .image-front-desktop, .image-back-desktop{
+                display: none;
+            }
+
+            .image-front-mobile, .image-back-mobile{
+                display: inline-block;
+            }
+
+            .container img.image-front, img.image-back{
+                xwidth:50%;
+                xheight: auto;
+                xmax-width: 45%;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            
+
+            .menu a{
+                float: none;
+                margin: 0 0 5px 0px;
+                display: block;
+                text-align: center;
+                border:none;
+                xborder-bottom: 1px solid #fff;
+            }
+            /* .menu a .hamburger{
+                display: inline-block;
+                position: absolute;
+                top: 0;
+                right: 0;
+            } */
+
+            .menu a:not(:first-child){
+                display: none;
+            }
+
+            .menu a.hamburger{
+                float: right;
+                display: block;
+                padding: 5px
+            }
+
+            .menu.menu-mobile a{
+                float: none;
+                display: block;
+            }
+
+            .container .box{
+                border-radius: 0;
+                font-size: 100%;
+                box-shadow: inset 25px 0px 25px -25px  rgba(210, 215, 211, 1), 
+                inset -25px 0px 25px -25px  rgba(210, 215, 211, 1);
+            }
+
+            .container .menu{
+                box-shadow: none;
+            }
+
+            .container .scene{
+                max-width: 100%;
+            }
+            .fab{
+                font-size: x-large;
+            }
+            
+            
+            .mobile-header{
+                display: inline-block;
+            }
+        }
+
+        .box {
+            xbackground-color: #444;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 150%; 
+            box-shadow: inset 0px 0px 5px 5px rgba(210, 215, 211, 1);
+            background-image: linear-gradient(to bottom, #868f96 0%, #596164 100%);
+        }
+
+        .menu,
+        .footer {
+            background-color: #999;
+        }
+
+        .key-features {
+            background-color: #ccc;
+            /* color: #444; */
+            font-size: 100%;
+        }
+
+        /*3D transform css*/
+        .scene {
+            width: 100%;
+            height: 260px;
+            perspective: 600px;
+            max-width: 90%;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+        }
+
+        .card__face {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+        }
+
+        .card__face--back {
+            transform: rotateY( 180deg );
+        }
+
+        .card.is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-link{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        /**/
+
+        
+
+        @keyframes donut-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .donut {
+            display: inline-block;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #7983ff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: donut-spin 1.2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box menu" id="menu">
+            <!-- <span class="mobile-header">
+                <i class="fab fa-phoenix-framework"></i><span class="company-name">Ultra Corporation</span>
+            </span> -->
+            <a>
+                <i class="fab fa-phoenix-framework"></i><span class="company-name">Ultra Corporation</span>
+            </a>
+            <a >Home</a>
+            <a >Products</a>
+            <a >Cart</a>
+            <a >Orders</a>
+            <a class="hamburger"><i id="menu-icon" class="fas fa-bars" onClick="expanMenu()"></i></a>
+        </div>
+
+        <div class="breadCrumb">
+            <span class="float-right">Products/Galaxy A8</span>
+        </div>
+
+        <div class="box visuals">
+            
+            <a class="flip-link" onClick="flip()">Click to toggle (3D transform)</a>
+            <div class="scene">
+                <div class="card" id="card" >
+                    <div class="card__face card__face--front">
+                            <img class="image-front image-front-desktop" src="https://rukminim1.flixcart.com/image/832/832/jlwmgsw0/mobile/6/y/g/samsung-galaxy-a8-star-sm-g885fzwgins-original-imaf8wnygeftszzc.jpeg?q=70"></img>
+                            <img class="image-front image-front-mobile" src="https://www.spyequipmentuk.co.uk/wp-content/uploads/2016/09/Samsung-Galaxy-A8-Spy-Phone.jpg"></img>
+                    </div>
+                    <div class="card__face card__face--back">
+                        <img class="image-back image-back-desktop" src="https://rukminim1.flixcart.com/image/832/832/jlwmgsw0/mobile/6/y/g/samsung-galaxy-a8-star-sm-g885fzwgins-original-imaf8wnfbqv7bhpw.jpeg?q=70"></img>
+                        <img class="image-back image-back-mobile" src="https://cdn.gsmarena.com/imgroot/news/18/08/galaxy-a8-star-price-in-india/-728/gsmarena_002.jpg"  />
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="box key-features">
+            <h3>Highlights</h3>
+            <ul class="highlihgts-list">
+                <li>6 GB RAM | 64 GB ROM </li>
+                <li>16.0 cm (6.3 inch) Display</li>
+                <li>24MP Rear Camera</li>
+                <li>3700 mAh Battery</li>
+            </ul>
+        </div>
+        <div class="box description">
+            <h3 class="title">Samsung Galaxy A8 Star (White, 64 GB)  (6 GB RAM)</h3>
+            <h2>$ 250</h2>
+            <p>
+                    Galaxy A8 Star features an ergonomic, 
+                    near bezel-less design that minimizes distraction so you can comfortably keep watching over what’s on screen. 
+                    Its 6.3inch Full HD+ Super AMOLED display provides immersive viewing experience. 
+                    Double the advantage. 
+                    Galaxy A8 Star features a sleek design and symmetrical side styling that grips well in the hand. 
+                    And with its sleek, elegant design users can look good when used on the move with life’s daily adventures. 
+                    Shoot sharp and bright day and night. 
+                    Galaxy A8 Star comes with 16MP and 24MP camera sensors, allowing user to minimize noise reduction and take clear selfies even in the dark environments.
+            </p>
+
+        </div>
+        <div class="box footer">
+            <button class="btn" id="buy" onClick="showLoader()">Buy</button>
+            <!-- <div class="donut hidden" id="spinner"></div> -->
+        </div>
+    </div>
+
+    <script>
+        function expanMenu(){
+            console.log('in');
+            var menuDiv = document.getElementById('menu');
+            console.log(menuDiv.classList);
+            menuDiv.classList.toggle('menu-mobile');
+            var menuIcon = document.getElementById('menu-icon');
+            menuIcon.classList.toggle('fa-times');
+        }
+
+        function flip(){
+            var card = document.getElementById('card');
+            card.classList.toggle('is-flipped');
+        }
+
+        function showLoader(){
+            var button = document.getElementById('buy');
+            button.innerHTML = `<div class="donut" id="spinner"></div>`;
+            setTimeout(()=>{
+                button.innerHTML = 'Buy Again!';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
